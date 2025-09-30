@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Panel Digital</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            color: white;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .product-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+        
+        .product-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #ffcc00;
+        }
+        
+        .product-description {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, #ff8a00, #da1b60);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .payment-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        
+        .payment-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #ffcc00;
+        }
+        
+        .payment-methods {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+        
+        .payment-method {
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+        
+        .payment-method h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .payment-method p {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        
+        .qris-code {
+            max-width: 200px;
+            margin: 0 auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .qris-code img {
+            width: 100%;
+            display: block;
+        }
+        
+        .contact-info {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .products {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Toko Panel Digital</h1>
+            <p class="subtitle">Solusi lengkap untuk kebutuhan digital Anda</p>
+        </header>
+        
+        <div class="products">
+            <div class="product-card">
+                <h2 class="product-title">Panel Unli</h2>
+                <p class="product-description">Akses tak terbatas ke berbagai layanan digital dengan harga terjangkau. Cocok untuk kebutuhan sehari-hari.</p>
+                <a href="#" class="btn">Beli Sekarang</a>
+            </div>
+            
+            <div class="product-card">
+                <h2 class="product-title">Reseller Panel</h2>
+                <p class="product-description">Panel khusus untuk reseller dengan harga grosir dan keuntungan maksimal. Mulai bisnis digital Anda sekarang!</p>
+                <a href="#" class="btn">Beli Sekarang</a>
+            </div>
+            
+            <div class="product-card">
+                <h2 class="product-title">Admin Panel</h2>
+                <p class="product-description">Panel lengkap untuk mengelola berbagai layanan digital dengan fitur admin yang powerful.</p>
+                <a href="#" class="btn">Beli Sekarang</a>
+            </div>
+            
+            <div class="product-card">
+                <h2 class="product-title">APK Beku Payment</h2>
+                <p class="product-description">Aplikasi dengan sistem pembayaran yang aman dan terjamin. Solusi pembayaran digital terpercaya.</p>
+                <a href="#" class="btn">Beli Sekarang</a>
+            </div>
+            
+            <div class="product-card">
+                <h2 class="product-title">Web Nokos Gratis</h2>
+                <p class="product-description">Website dengan layanan nokos gratis untuk berbagai keperluan. Hemat biaya dengan layanan ini.</p>
+                <a href="#" class="btn">Beli Sekarang</a>
+            </div>
+        </div>
+        
+        <div class="payment-section">
+            <h2 class="payment-title">Metode Pembayaran</h2>
+            <div class="payment-methods">
+                <div class="payment-method">
+                    <h3>DANA</h3>
+                    <p>088202179638</p>
+                </div>
+                
+                <div class="payment-method">
+                    <h3>GOPAY</h3>
+                    <p>0882021796358</p>
+                </div>
+                
+                <div class="payment-method">
+                    <h3>QRIS</h3>
+                    <div class="qris-code">
+                        <img src="https://files.catbox.moe/cw1hix.jpg" alt="QRIS Code">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-info">
+            <p>Minat dengan produk kami? Silakan hubungi kami untuk informasi lebih lanjut!</p>
+            <p>Email: info@tokopanel.com | WhatsApp: 088202179638</p>
+        </div>
+    </div>
+</body>
+</html>
